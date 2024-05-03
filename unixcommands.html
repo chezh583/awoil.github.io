@@ -35,7 +35,7 @@ tr:nth-child(even) {
     <th>Function</th>
   </tr>
   <tr>
-    <td>cd dirc
+    <td>cd dir
     <td>go to a directory
   </tr>
   <tr>
@@ -86,6 +86,14 @@ tr:nth-child(even) {
     <td>df -h
     <td>check storage
   </tr>
+  <tr>
+    <td>chmod [] fname
+    <td>change access permissions, further read <a href="https://en.wikipedia.org/wiki/Chmod" target="_self">View</a>
+  </tr>
+  <tr>
+    <td>source appname
+    <td>execute an application
+  </tr>
 </table>
 
 <p>When viewing or editing a file (e.g. using vi command), use following command.</p>
@@ -114,9 +122,13 @@ tr:nth-child(even) {
 
 <p>Other useful commands.</p>
 <table>
-  <tr>
+    <tr>
     <th>Command</th>
     <th>Function</th>
+  </tr>
+  <tr>
+    <td>*
+    <td>all. e.g. "*.dat" means all files with ".dat" as names 
   </tr>
   <tr>
     <td>module avail modulename
@@ -125,6 +137,26 @@ tr:nth-child(even) {
   <tr>
     <td>modulename --version
     <td>check the version of module
+  </tr>
+  <tr>
+    <td>modulmatlab -nodisplay < fname
+    <td>run matlab code without opening application
+  </tr>
+  <tr>
+    <td>zip fname.zip fname1 fname2; zip dir.zip dir1 dir2
+    <td>zip files or directories
+  </tr>
+  <tr>
+    <td>unzip fname.zip 
+    <td>unzip a zip file
+  </tr>
+  <tr>
+    <td>tar -zcvf fname.tgz fname1 fname2; tar -zcvf fname.tgz dir1 dir2
+    <td>zip files or directories
+  </tr>
+  <tr>
+    <td>tar -zxvf fname.tgz
+    <td>unzip a zip file
   </tr>
 </table>   
 </html>
