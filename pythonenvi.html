@@ -5,6 +5,8 @@
     h1 {text-align: center; color: tomato; font-size:60px;}
     h2 {text-align: left; color: black; font-size:40px;}
     h2 {text-align: left; color: black; font-size:30px;}
+    h3 {text-align: center; color: black; font-size:18px;}
+    
     p {text-align: left; color: black; font-size:18px;}
     img {display: block;   margin-left: auto;   margin-right: auto;}
     footer {text-align: center; color: grey;}
@@ -13,15 +15,17 @@
 
 <body>
 <h1>Python virtual environment</h1>
+<h3>Create date: May 5 2024</h3>
 
 
-<h2>1. Unix Settings</h2>
-  <p>1. Unix commands: <a href="unixcommands.html" target="_self">View</a> </p>
-  <p>2. How to set python virtual environment <a href="pythonenvi.html" target="_self">View</a> </p>
-  <p>3. How to install Wavewatch</p>
-  <p></p>
-
-
+<p> A virtual environment makes modules or packages to be installed confidently and not interfere with another project’s environment. Using following command to create a virtual environment: </p>
+<p style="background-color:grey;">python3 -m venv envname</p>
+<p> This will create a virtual environment named "envame", which includes basic packages for the environment. Activate this environment, staying in "bin" directory and using following command: </p>
+<p style="background-color:grey;"> source activate </p>
+<p> After activating your virtual environment, the environment name will be shown in front of your command line. In order to add new modules in this environment, use pre-installed "pip" or "pip3":</p>
+<p style="background-color:grey;"> python3 -m pip install modulename </p>
+<p> To deactivate the virtual environment, run the command: </p>
+<p style="background-color:grey;"> deactivate </p>
   
 </body>
 </html>
