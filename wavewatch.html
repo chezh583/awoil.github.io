@@ -36,6 +36,9 @@
 <p> All WW3 executable commands are stored in bin for its compilation. After previous commands, WW3 is ready to be compiled under the configuration required by the user. For any compilation, write the following command from the bin directory</p>
 <p style="background-color:grey;"> w3_setup /home/user/WW3/model -c comp -s switch </p>
 <p> the comp keyword can be mpt, intel, gfortran, pgi, and the switch keyword can be the suffix of a provided switch file in the 'bin' folder.</p>
+<p> Make wwatch3.env accessible</p>
+<p style="background-color:grey;"> chmod +rwx wwatch3.env </p>
+
   
 <h2> Gridgen </h2>
 <p> Gridgen is a MATLAB program to create files that contain bathimethric information to be used in WW3. Download Gridgen: </p>
@@ -47,7 +50,11 @@
 <h2> OASIS-MCT </h2>
 <p> In order to couple WW3 with other climate models (ice, ocean or atmosphere model), OASIS-MCT needs to be installed: </p>
 <p style="background-color:grey;"> git clone https://gitlab.com/cerfacs/oasis3-mct.git </p>
-
+<p> Go back to WW3 folder, create a file named 'build', go to this file. Run following command: </p>
+<p style="background-color:grey;"> cmake .. -DSWITCH=switchname -DCMAKE_INSTALL_PREFIX=install </p>
+<p> The last steps are: </p>
+<p style="background-color:grey;"> make </p>
+<p style="background-color:grey;"> make install </p>
 
   
 </body>
