@@ -21,10 +21,22 @@
 <h2> Wavewatch III </h2>
 <p> Download Wavewatch III (WW3) source code: </p>
 <p style="background-color:grey;">git clone https://github.com/NOAA-EMC/WW3</p>
-<p> This will create a folder named as 'WW3'. Go to the 'WW3' directory, and start setting up: </p>
+<p> This will create a folder named as 'WW3'. Go to the 'WW3' directory, and run following command:  </p>
+<p style="background-color:grey;"> ./model/bin/ww3_from_ftp.sh </p>
+<p> This will download the binary and large files used for WW3 test cases in 'regtest' directory. These are large files that are not sotred in the git repository. Go to the 'WW3' directory, and start setting up: </p>
 <p style="background-color:grey;"> ./model/bin/w3_setup model </p>
 <p> This will compile auxiliary programs and setup the environment file wwatch3.env</p>
 
+<p>WAVEWATCH III allows the results obtained to be exported in NetCDF-4 format. For this, the versions of the installed NETCDF library must be verified, add following command in '.bashrc' file:</p>
+<p style="background-color:grey;"> PATH=$PATH:/proj/snic2021-23-400/users/x_zhach/envi/WW3/WW3/model/bin </p>
+<p style="background-color:grey;"> WWATCH3_NETCDF=NC4 </p>
+<p style="background-color:grey;"> NETCDF_CONFIG=/software/sse/manual/netcdf/4.4.1.1/HDF5-1.8.19-nsc1-intel-2018a-eb/bin/nc-config </p>
+<p style="background-color:grey;"> OASISDIR=/proj/snic2021-23-400/users/x_zhach/envi/WW3/oasis3-mct </p>
+
+<p> All WW3 executable commands are stored in bin for its compilation. After previous commands, WW3 is ready to be compiled under the configuration required by the user. For any compilation, write the following command from the bin directory</p>
+<p style="background-color:grey;"> w3_setup /home/user/WW3/model -c <comp> -s <switch> </p>
+<p> the comp keyword can be mpt, intel, gfortran, pgi, and the switch keyword can be the suffix of a provided switch file in the 'bin' folder.</p>
+  
 <h2> Gridgen </h2>
 <p> Gridgen is a MATLAB program to create files that contain bathimethric information to be used in WW3. Download Gridgen: </p>
 <p style="background-color:grey;"> git clone https://github.com/NOAA-EMC/gridgen </p>
