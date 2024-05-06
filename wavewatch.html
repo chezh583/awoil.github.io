@@ -38,6 +38,13 @@
 <p> the comp keyword can be mpt, intel, gfortran, pgi, and the switch keyword can be the suffix of a provided switch file in the 'bin' folder.</p>
 <p> Make wwatch3.env accessible</p>
 <p style="background-color:grey;"> chmod +rwx wwatch3.env </p>
+<p> Go back to WW3 folder, create a file named 'build', go to this file. Run following command: </p>
+<p style="background-color:grey;"> cmake .. -DSWITCH=switchname -DCMAKE_INSTALL_PREFIX=install </p>
+<p> The last steps are: </p>
+<p style="background-color:grey;"> make </p>
+<p style="background-color:grey;"> make install </p>
+<p> It will create a new folder in '/build/bin', where stores WW3 functions. </p> 
+
 
   
 <h2> Gridgen </h2>
@@ -50,11 +57,7 @@
 <h2> OASIS-MCT </h2>
 <p> In order to couple WW3 with other climate models (ice, ocean or atmosphere model), OASIS-MCT needs to be installed: </p>
 <p style="background-color:grey;"> git clone https://gitlab.com/cerfacs/oasis3-mct.git </p>
-<p> Go back to WW3 folder, create a file named 'build', go to this file. Run following command: </p>
-<p style="background-color:grey;"> cmake .. -DSWITCH=switchname -DCMAKE_INSTALL_PREFIX=install </p>
-<p> The last steps are: </p>
-<p style="background-color:grey;"> make </p>
-<p style="background-color:grey;"> make install </p>
+
 
   
 </body>
