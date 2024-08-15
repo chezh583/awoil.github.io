@@ -22,10 +22,27 @@
 <h2> 1. Tutorial</h2>
 <embed src="DOC/cdo.pdf" width="100%" height="1000px" />
   
-<h2> 2. Example </h2> 
+<h2> 2. CDO Example </h2> 
 <p> (1) Merge data </p>   
   <p style="background-color:grey;"> cdo -b F64 -f nc2 mergetime file1.nc file2.nc file3.nc output.nc </p>
 <p> (2) Convert grib file to netcdf file </p>   
   <p style="background-color:grey;"> cdo -f nc copy filetry.grib filetry.nc </p>
+
+<h2> 3. NCO Example </h2> 
+<p> (1) Extract variable “SST” from in.nc </p>   
+  <p style="background-color:grey;"> ncks -v SST in.nc out.nc </p>
+<p> (2) Delete variable “lev” from in.nc </p>   
+  <p style="background-color:grey;"> ncks -C -O -x -v lev in.nc out.nc </p>
+<p> (3) Delete dimension “lev” from in.nc </p>   
+  <p style="background-color:grey;"> ncwa -a lev in.nc out.nc </p>
+<p> (4) Repeack the out.nc after averaging-out the level dimension with “ncwa” </p>   
+  <p style="background-color:grey;"> ncpdq in.nc out.nc </p>
+<p> (5) Change Variable Name </p>   
+  <p style="background-color:grey;"> ncrename -v old_variable, new_variable monthly_data.nc </p>
+<p> (6) Convert a variable type </p>   
+  <p style="background-color:grey;"> ncap2 -s 'time=float(time)' </p>
+<p> (7) Add, modify attribute </p>   
+  <p style="background-color:grey;"> ncatted -a att_nm, var_nm, mode, att_typ, att_val in.nc [out.nc] </p>
+  <p>for mode: a=append, c=create, d=delete, m=modify, o=overwrite; for att_typ: f=float, d=double, l=long, s=short, c=character, b=byte, i=integer </p>
 </body>
 </html>
