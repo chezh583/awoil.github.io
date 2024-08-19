@@ -20,29 +20,29 @@
 
 <h2>1. Matlab</h2>
 <p> 1. reate latgrid and longrid from 1D lat and lon</p>
-<p style="background-color:grey;">lon=ncread(f3,'lon');
-lat=ncread(f3,'lat');
-latgrid=repmat(carralat',length(lon),1);
-longrid=repmat(carralon,1,length(lat));</p>
+<p style="background-color:grey;">lon=ncread(f3,'lon');</p>
+<p style="background-color:grey;">lat=ncread(f3,'lat');</p>
+<p style="background-color:grey;">latgrid=repmat(carralat',length(lon),1);</p>
+<p style="background-color:grey;">longrid=repmat(carralon,1,length(lat));</p>
 
 <p> 2. geophysical data visualization (m_map): lambert Lambert conformal</p>
-<p style="background-color:grey;">m_proj('lambert','lon',[10 40],'lat',[74 80]); 
-m_pcolor(lon,lat,f_uwnd);
-shading flat  
-m_gshhs_i; 
-colorbar
-clim([0, 10])
-m_grid</p>
+<p style="background-color:grey;">m_proj('lambert','lon',[10 40],'lat',[74 80]); </p>
+<p style="background-color:grey;">m_pcolor(lon,lat,f_uwnd);</p>
+<p style="background-color:grey;">shading flat  </p>
+<p style="background-color:grey;">m_gshhs_i; </p>
+<p style="background-color:grey;">colorbar</p>
+<p style="background-color:grey;">clim([0, 10])</p>
+<p style="background-color:grey;">m_grid</p>
 
 <p> 3. geophysical data visualization (m_map): stereographic</p>
-<p style="background-color:grey;">m_proj('stereographic', 'lat',90,'long',0,'radius',30);
-m_pcolor(lon,lat,ones(m,n));
-shading flat  
-% m_grid('box','fancy','tickdir','in');
-% m_grid('tickdir','out','box','fancy');
-m_grid('xtick',6,'tickdir','out','ytick',[60 70 80],'linest','--');
-m_gshhs_i; 
-m_coast('color','k');</p>
+<p style="background-color:grey;">m_proj('stereographic', 'lat',90,'long',0,'radius',30);</p>
+<p style="background-color:grey;">m_pcolor(lon,lat,ones(m,n));</p>
+<p style="background-color:grey;">shading flat  </p>
+<p style="background-color:grey;">% m_grid('box','fancy','tickdir','in');</p>
+<p style="background-color:grey;">% m_grid('tickdir','out','box','fancy');</p>
+<p style="background-color:grey;">m_grid('xtick',6,'tickdir','out','ytick',[60 70 80],'linest','--');</p>
+<p style="background-color:grey;">m_gshhs_i; </p>
+<p style="background-color:grey;">m_coast('color','k');</p>
 
   
 </body>
