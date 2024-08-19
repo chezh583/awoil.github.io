@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Code Libraries</title>
+  <style>
+    h1 {text-align: center; color: tomato; font-size:60px;}
+    h2 {text-align: left; color: black; font-size:40px;}
+    h2 {text-align: left; color: black; font-size:30px;}
+    h3 {text-align: center; color: black; font-size:18px;}
+    
+    p {text-align: left; color: black; font-size:18px;}
+    img {display: block;   margin-left: auto;   margin-right: auto;}
+    footer {text-align: center; color: grey;}
+  </style>
+</head>
+
+<body>
+<h1>Code Libararies</h1>
+<h3>Create date: Aug. 19 2024</h3>
+<p>Go back to the main page <a href="index.html" target="_self">View</a></p>
+
+<h2>1. Matlab</h2>
+<p> 1. reate latgrid and longrid from 1D lat and lon</p>
+<p style="background-color:grey;">lon=ncread(f3,'lon');
+lat=ncread(f3,'lat');
+latgrid=repmat(carralat',length(lon),1);
+longrid=repmat(carralon,1,length(lat));</p>
+
+<p> 2. geophysical data visualization (m_map): lambert Lambert conformal</p>
+<p style="background-color:grey;">m_proj('lambert','lon',[10 40],'lat',[74 80]); 
+m_pcolor(lon,lat,f_uwnd);
+shading flat  
+m_gshhs_i; 
+colorbar
+clim([0, 10])
+m_grid</p>
+
+<p> 3. geophysical data visualization (m_map): stereographic</p>
+<p style="background-color:grey;">m_proj('stereographic', 'lat',90,'long',0,'radius',30);
+m_pcolor(lon,lat,ones(m,n));
+shading flat  
+% m_grid('box','fancy','tickdir','in');
+% m_grid('tickdir','out','box','fancy');
+m_grid('xtick',6,'tickdir','out','ytick',[60 70 80],'linest','--');
+m_gshhs_i; 
+m_coast('color','k');</p>
+
+  
+</body>
+</html>
