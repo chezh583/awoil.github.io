@@ -18,12 +18,13 @@
 <h3>Created date: Aug. 19 2024</h3>
 <p>Go back to the main page <a href="index.html" target="_self">View</a></p>
 
+  
 <h2>1. Matlab</h2>
 <p> 1. reate latgrid and longrid from 1D lat and lon</p>
 <p style="background-color:grey;">lon=ncread(f3,'lon');</p>
 <p style="background-color:grey;">lat=ncread(f3,'lat');</p>
-<p style="background-color:grey;">latgrid=repmat(carralat',length(lon),1);</p>
-<p style="background-color:grey;">longrid=repmat(carralon,1,length(lat));</p>
+<p style="background-color:grey;">latgrid=repmat(lat',length(lon),1);</p>
+<p style="background-color:grey;">longrid=repmat(lon,1,length(lat));</p>
 
 <p> 2. geophysical data visualization (m_map): lambert Lambert conformal</p>
 <p style="background-color:grey;">m_proj('lambert','lon',[10 40],'lat',[74 80]); </p>
@@ -47,6 +48,11 @@
 <p> 4. datestr conversion for time in netcdf file </p>
 <p style="background-color:grey;">datetime(1950,1,1) + seconds(1907798400);</p>
 
-  
+<p> 5. search index of lat/lon in a lat/lon grid </p>
+function [I,J]=searchforloc(arg_lat,arg_lon,latgrid,longrid)
+  dist2=sum(bsxfun(@minus,cat(3,arg_lat,arg_lon),cat(3,latgrid,longrid)).^2,3);
+  [I,J]=find(dist2==min(dist2(:)));
+end
+
 </body>
 </html>
