@@ -49,10 +49,10 @@
 <p style="background-color:grey;">datetime(1950,1,1) + seconds(1907798400);</p>
 
 <p> 5. search index of lat/lon in a lat/lon grid </p>
-function [I,J]=searchforloc(arg_lat,arg_lon,latgrid,longrid)
-  dist2=sum(bsxfun(@minus,cat(3,arg_lat,arg_lon),cat(3,latgrid,longrid)).^2,3);
-  [I,J]=find(dist2==min(dist2(:)));
-end
+function [I,J]=searchforloc(arg_lat,arg_lon,latgrid,longrid)<br>
+  dist2=sum(bsxfun(@minus,cat(3,arg_lat,arg_lon),cat(3,latgrid,longrid)).^2,3);<br>
+  [I,J]=find(dist2==min(dist2(:)));<br>
+end<br>
 
 </body>
 </html>
