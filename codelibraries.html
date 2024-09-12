@@ -55,26 +55,26 @@ function [I,J]=searchforloc(arg_lat,arg_lon,latgrid,longrid)<br>
 end<br>
 
 <p> 6. plot 2D wave spectrum using matlab, desined by myself </p>
-function [] = wvsp(direction, frequency, spectrum,levels)
-% dimensions: direction: mx1, frequency: nx1, spectrum: mxn
-% levels specifies the number of contour lines
-
-if nargin < 4
-    levels =  5;
-end
-
-[fgrid,dirgrid]=meshgrid(frequency,direction);
-dirgrid=deg2rad(dirgrid);
-[px,py]=pol2cart(dirgrid,fgrid);
-h =polar(px,py);
-
-delete(h);                                                                  
-hold on    
-contour(px,py,spectrum,levels);       
-view([90 -90])
-
-colorbar('vert');  
-end
+function [] = wvsp(direction, frequency, spectrum,levels) <br>
+% dimensions: direction: mx1, frequency: nx1, spectrum: mxn <br>
+% levels specifies the number of contour lines <br>
+ <br>
+if nargin < 4 <br>
+    levels =  5; <br>
+end <br>
+ <br>
+[fgrid,dirgrid]=meshgrid(frequency,direction); <br>
+dirgrid=deg2rad(dirgrid); <br>
+[px,py]=pol2cart(dirgrid,fgrid); <br>
+h =polar(px,py); <br>
+ <br>
+delete(h); <br>                                                                  
+hold on   <br>  
+contour(px,py,spectrum,levels);  <br>      
+view([90 -90]) <br>
+ <br>
+colorbar('vert');   <br>
+end <br>
 
   
 <h2>2. External Links</h2>
