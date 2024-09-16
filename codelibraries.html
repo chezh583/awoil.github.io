@@ -63,6 +63,9 @@ if nargin < 4 <br>
     levels =  5; <br>
 end <br>
  <br>
+direction=[direction;direction(1)]; <br>
+spectrum=[spectrum;spectrum(1,:)]; <br>
+ <br>
 [fgrid,dirgrid]=meshgrid(frequency,direction); <br>
 dirgrid=deg2rad(dirgrid); <br>
 [px,py]=pol2cart(dirgrid,fgrid); <br>
