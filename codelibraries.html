@@ -79,7 +79,35 @@ view([90 -90]) <br>
 colorbar('vert');   <br>
 end <br>
 
-  
+<p> 7. calculate directiom "from" and "to" in 0-360 deg, north =0, clockwise </p>
+function wdir = wind_direction(u, v, convention)  <br>  
+    % convention : string (optional) <br>  
+    %    Convention to return direction; 'from' returns the direction the wind is coming from <br>  
+    %    (meteorological convention), 'to' returns the direction the wind is going towards <br>  
+    %    (oceanographic convention), default is 'from'. <br>  
+     <br>  
+    if nargin < 3 <br>  
+        convention = 'from';  % Default convention is 'from' <br>  
+    end <br>  
+     <br>  
+    % Compute the wind direction in radians and then convert to degrees <br>  
+    wdir = 90 - atan2d(-v, -u);  % atan2d returns result in degrees <br>  
+ <br>  
+    % Handle oceanographic convention <br>  
+    if strcmp(convention, 'to') <br>  
+        wdir = wdir - 180; <br>  
+    elseif ~strcmp(convention, 'from') <br>  
+        error('Invalid value for "convention". Valid options are "from" or "to".'); <br>  
+    end <br>  
+ <br>  
+    % Ensure wind direction is within [0, 360] degrees <br>  
+    wdir(wdir <= 0) = wdir(wdir <= 0) + 360; <br>  
+ <br>  
+    % Handle calm wind (u = 0 and v = 0) <br>  
+    calm_mask = (u == 0) & (v == 0); <br>  
+    wdir(calm_mask) = 0; <br>  
+end <br>  
+   <br>  
 <h2>2. External Links</h2>
 <p> 1. m_map: (<a href="https://www.eoas.ubc.ca/~rich/map.html" target="_self">View</a>)</p>
 <p> 2. more colormap: (<a href="https://se.mathworks.com/matlabcentral/fileexchange/120088-200-colormap" target="_self">View</a>)</p>
