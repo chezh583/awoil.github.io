@@ -110,17 +110,17 @@ end <br>
    <br>  
 
 <p> 8. Cospectrum, PSD </p>
-function [S,f]=cospectrum(ux,uy,frequency)
-%%  this fucntion is used for caculating spectrum of random variable
-% input:   ux,uy:     time series of variable
-%          frequency: the frequency of variable
-%output:    s,f       corresponse to spectrum and frequency of spectrum 
-% noted:     when ux=uy, the S is the spectrum of ux,while ux is not equal
-%            to uy, the S is the cospectrum of ux and uy.
-A=fft(ux);B=fft(uy);
-Sall=real((1/frequency)/(2*pi*length(ux))*A.*conj(B));
-f=frequency*(1:1:length(ux)/2)/length(ux);
-S=2*Sall(1:length(Sall)/2);
+function [S,f]=cospectrum(ux,uy,frequency)<br>  
+%%  this fucntion is used for caculating spectrum of random variable<br>  
+% input:   ux,uy:     time series of variable<br>  
+%          frequency: the frequency of variable<br>  
+%output:    s,f       corresponse to spectrum and frequency of spectrum <br>  
+% noted:     when ux=uy, the S is the spectrum of ux,while ux is not equal<br>  
+%            to uy, the S is the cospectrum of ux and uy.<br>  
+A=fft(ux);B=fft(uy);<br>  
+Sall=real((1/frequency)/(2*pi*length(ux))*A.*conj(B));<br>  
+f=frequency*(1:1:length(ux)/2)/length(ux);<br>  
+S=2*Sall(1:length(Sall)/2);<br>  
 
       
 <h2>2. External Links</h2>
