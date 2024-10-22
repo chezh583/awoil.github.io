@@ -25,7 +25,9 @@
 <h2> 2. CDO Example </h2> 
 <p> (1) Merge data </p>   
   <p style="background-color:grey;"> cdo -b F64 -f nc2 mergetime file1.nc file2.nc file3.nc output.nc </p>
-<p> (2) Convert grib file to netcdf file </p>   
+<p> (2) Time interpolation </p>   
+  <p style="background-color:grey;"> cdo -inttime,6 infile outfile </p>  
+<p> (3) Convert grib file to netcdf file </p>   
   <p style="background-color:grey;"> cdo -f nc copy filetry.grib filetry.nc </p>
 
 <h2> 3. NCO Example </h2> 
