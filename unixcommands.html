@@ -168,5 +168,13 @@ tr:nth-child(even) {
     <td>tar -zxvf fname.tgz
     <td>unzip a zip file
   </tr>
-</table>   
+</table> 
+
+
+<h2>SCP password prompt and file transfer</h2>
+1. Password prompt: https://avsitter.github.io/mydoc_no_password_prompts_scp.html <br>
+2. file transfer: <br>
+1) Copy a file to the remote server: scp ~/Document/Localfile remoteuser@remotemachine:~/Desktop <br>
+2) Download a file from the remote server: scp remoteuser@remotemachine:~/Destkop/remotefile ~/Desktop <br>
+NOTE: use '-r' when processing directories; stay in local machine (not ssh server) when downloading or uploading <br>
 </html>
